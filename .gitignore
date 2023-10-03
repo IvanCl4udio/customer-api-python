@@ -465,4 +465,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Configuration of development environment
+config-db-variables.sh
+
 # End of https://www.toptal.com/developers/gitignore/api/python,flask,pycharm,visualstudiocode,windows,linux,macos
