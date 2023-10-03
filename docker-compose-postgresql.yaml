@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  customer-db:
+    image: postgres
+    container_name: customer-python-database
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: customerdb
+    volumes:
+      - local_pgdata_python:/var/lib/postgresql/data
+  customer-db-pgadmin:
+    image: dpage/pgadmin4
+    container_name: customer-python-pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: user@1234
+    volumes:
+      - pgadmin_data_python:/var/lib/pgadmin
+
+volumes:
+  local_pgdata_python:
+  pgadmin_data_python:
